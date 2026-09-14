@@ -1,6 +1,9 @@
 const RANKS = { off: 0, minimal: 10, low: 20, medium: 30, high: 40, xhigh: 60 };
 
-const BINARY_MODELS = new Set(["qwen", "kimi", "minimax"]);
+// Models whose only reasoning control is binary on/off (supported_reasoning_efforts: [low]).
+// Synced with openclaw-config models.yaml 2026-09-14: qwen and kimi moved to graded
+// efforts (qwen: low/medium/high; kimi: low/medium/high/xhigh) — only minimax is binary now.
+const BINARY_MODELS = new Set(["minimax"]);
 
 const NO_MINIMAL_PROVIDERS = new Set([
   "deepseek", "deepseek-flash", "glm", "kimi", "qwen", "minimax",
